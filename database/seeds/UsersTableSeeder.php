@@ -14,7 +14,13 @@ class UsersTableSeeder extends Seeder
     {
         User::create([
             'name' => 'Daniel',
-            'email' => 'guimaraes15@gmail.com',
+            'email' => 'contato@danielmota.com.br',
+            'password' => bcrypt('123456')
+        ]);
+
+        User::create([
+            'name' => 'Usuario comum',
+            'email' => 'eu@danielmota.com.br',
             'password' => bcrypt('123456')
         ]);
     }
