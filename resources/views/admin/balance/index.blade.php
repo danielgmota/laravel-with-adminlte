@@ -18,17 +18,16 @@
         <a href="#" class="btn btn-danger">Sacar</a>
     </div>
     <div class="box-body">
+        @include('admin.includes.alerts')
         <div class="small-box bg-green">
             <div class="inner">
-                <h3>{{ number_format($amount, 2, ',','.') }} <sup style="font-size:20px">%</sup></h3>
-                <p>aaaa</p>
-                </p>
+                <h3>R$ {{ number_format($amount, 2, ',','.') }}</h3>
             </div>
             <div class="icon">
-                <i class="ion ion-stats-bars"></i>
+                <i class="ion ion-cash"></i>
             </div>
             <a href="#" class="small-box-footer">
-                More info
+                Histórico
                 <i class="fas fa-arrow-circle-right"></i>
             </a>
         </div>

@@ -26,6 +26,15 @@ class BalanceController extends Controller
     {
         // dd(auth()->user()->balance()->firstOrCreate([]));
         $balance = auth()->user()->balance()->firstOrCreate([]);
-        $balance->deposit($request->value);
+        $response = $balance->deposit($request->value);
+
+        if ($response['success'])
+        {
+            return redirect()
+                ->route('admin.balance')
+                ->with('success', $response['message']);
+        }
+
+        return redirect()->back()->with('error', $response['message']);
     }
 }
